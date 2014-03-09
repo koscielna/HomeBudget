@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  due_date: 2014-03-09 18:21:31
+  from: 2014-03-09 18:21:31
+  to: 2014-03-09 18:21:31
+  amount: 1.5
+  user_id: 1
+  paid_at: 2014-03-09 18:21:31
+
+two:
+  due_date: 2014-03-09 18:21:31
+  from: 2014-03-09 18:21:31
+  to: 2014-03-09 18:21:31
+  amount: 1.5
+  user_id: 1
+  paid_at: 2014-03-09 18:21:31
