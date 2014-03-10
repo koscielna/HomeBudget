@@ -1,1 +1,12 @@
 %h1 Budżet Domowy
+
+- if user_signed_in?
+
+  %h3 You have succesfully signed in
+  = link_to "Sign Out", destroy_user_session_path, :method => :delete
+
+- else
+
+  %h2 Witaj na stronie Budżetu Domowego!
+  = link_to "Sign In", new_user_session_path, :method => :get
+  = link_to "Sign up", new_user_registration_path, :method => :get
