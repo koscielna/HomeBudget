@@ -1,0 +1,36 @@
+%h2 Sign up
+
+= form_tag(user_registration_path,:method => 'post')
+= devise_error_messages!
+.table
+
+  .tr
+    .td Username :
+    .td= text_field_tag "user[username]",@user.username
+
+  .tr
+    .td Email :
+    .td= text_field_tag "user[email]",@user.email
+
+  .tr
+    .td Password :
+    .td= text_field_tag "user[password]",@user.password
+
+  .tr
+    .td Confirm Password :
+    .td= text_field_tag "user[password_confirmation]",@user.password_confirmation
+
+  .tr
+    .td Bank :
+    .td= text_field_tag "user[bank]",@user.bank
+
+  .tr
+    .td Adress :
+    .td= text_field_tag "user[adress]",@user.adress, :rows => 10, :cols => 25
+
+  %tr
+    %td= submit_tag nil, :class => "form_submit"
+
+  %tr>
+
+= render :partial => "devise/shared/links"
