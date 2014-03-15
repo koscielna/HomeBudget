@@ -28,9 +28,7 @@
     .td Adress :
     .td= text_field_tag "user[adress]",@user.adress, :rows => 10, :cols => 25
 
-  %tr
-    %td= submit_tag nil, :class => "form_submit"
-
-  %tr>
+  .tr
+    .td= submit_tag nil, :class => "form_submit"
 
 = render :partial => "devise/shared/links"
