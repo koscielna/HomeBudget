@@ -6,6 +6,5 @@
   = f.submit
 
 %ul
-- @situations.each do |s|
-  %li= s.name
-
+- @situations.each do |situation|
+  %li= link_to situation.name, situation
