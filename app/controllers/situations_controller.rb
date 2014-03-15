@@ -10,7 +10,7 @@ class SituationsController < ApplicationController
 
   def create
     @situation = Situation.new(situation_params)
-    @situation.user = current_user
+    @situation.owner = current_user
     @situation.save
 
     redirect_to dashboard_path
@@ -18,7 +18,7 @@ class SituationsController < ApplicationController
 
   def show
     @situation = Situation.find(params[:id])
-    @owner = @situation.user
+    @owner = @situation.owner
   end
 
   private

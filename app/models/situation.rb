@@ -1,5 +1,4 @@
 class Situation < ActiveRecord::Base
-  belongs_to :user
-  has_many :participations
-  has_many :users, through: :participations
+  belongs_to :owner
+  has_many :participants, class_name: 'User', through: :participations
 end
