@@ -7,5 +7,5 @@
 
 %ul
 - @situations.each do |situation|
-  - if situation.participants.include?(current_user) or situation.owner_id == current_user[:id]
+  - if situation.users.include?(current_user) or situation.owner == current_user
     %li= link_to situation.name, situation

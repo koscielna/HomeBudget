@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :situations
-  has_many :participated_situations, class_name: 'Situation', through: :participations
+  has_many :owned_situations, class_name: Situation, foreign_key: :owner_id
+
+  has_many :participations
+  has_many :situations, through: :participations
 end
