@@ -7,6 +7,8 @@ HomeBudget::Application.routes.draw do
   root 'welcome#index'
   get 'dashboard' => 'welcome#dashboard'
 
+  resources :situations
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

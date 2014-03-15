@@ -1,6 +1,11 @@
 %h1 Welcome to Home Budget!
 %h3 Here is your Thread's list. Choose one to go to the Thread's dashboard or go ahead and create a new one.
 
-= simple_form_for [current_user, Situation.new] do |f|
-  = f.input :name, label: "Thread's name"
+= simple_form_for [Situation.new] do |f|
+  = f.input :name, label: "New Thread's name"
   = f.submit
+
+%ul
+- @situations.each do |s|
+  %li= s.name
+
