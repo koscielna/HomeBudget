@@ -1,2 +1,10 @@
 %h3 Thread owned by #{@owner.username}
 
+= simple_form_for [@situation, Item.new] do |f|
+  = f.input :name, label: "New Item's name"
+  = f.input :amount, label: "Item's value"
+  = f.submit
+
+- @situation.items.each do |item|
+  %p= item.name
+  %p= item.amount

@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
   has_many :participations
   has_many :situations, through: :participations
+
+  has_many :items
 end
