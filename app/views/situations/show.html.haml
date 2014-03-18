@@ -8,3 +8,12 @@
 - @situation.items.each do |item|
   %p= item.name
   %p= item.amount
+
+= form_tag attach_situation_path(@situation) do
+  = text_field_tag :email
+  = submit_tag "Attach User"
+
+%h3 Users participating in this thread:
+%ul
+- @situation.users.each do |user|
+  %li= "#{user.username}, #{user.email}"

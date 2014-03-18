@@ -8,6 +8,9 @@ HomeBudget::Application.routes.draw do
   get 'dashboard' => 'welcome#dashboard'
 
   resources :situations do
+    member do
+      post :attach
+    end
     resources :items
   end
 

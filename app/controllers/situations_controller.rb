@@ -21,6 +21,17 @@ class SituationsController < ApplicationController
     @owner = @situation.owner
   end
 
+  def attach
+    @user = User.find_by(email: params[:email])
+    @situation = Situation.find(params[:id])
+
+    if @user
+      Participation.create(user_id: @user.id, situation_id: @situation.id)
+    end
+
+    redirect_to @situation
+  end
+
   private
 
   def situation_params
