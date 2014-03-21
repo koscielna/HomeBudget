@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315132118) do
+ActiveRecord::Schema.define(version: 20140321173324) do
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -30,14 +30,12 @@ ActiveRecord::Schema.define(version: 20140315132118) do
   end
 
   create_table "payments", force: true do |t|
-    t.datetime "due_date"
-    t.datetime "from"
-    t.datetime "to"
     t.float    "amount"
     t.integer  "user_id"
     t.datetime "paid_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "overdue"
   end
 
   create_table "situations", force: true do |t|
@@ -46,6 +44,8 @@ ActiveRecord::Schema.define(version: 20140315132118) do
     t.integer  "clearing_period"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "due_date"
+    t.integer  "payment_period"
   end
 
   create_table "users", force: true do |t|
