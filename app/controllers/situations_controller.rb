@@ -26,7 +26,7 @@ class SituationsController < ApplicationController
     @situation = Situation.find(params[:id])
 
     if @user
-      Participation.create(user_id: @user.id, situation_id: @situation.id)
+      Participation.find_or_create_by(user_id: @user.id, situation_id: @situation.id)
     end
 
     redirect_to @situation
