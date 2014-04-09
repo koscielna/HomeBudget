@@ -10,6 +10,7 @@ HomeBudget::Application.routes.draw do
   resources :situations do
     member do
       post :attach
+      get :admin_panel
     end
     resources :items
   end

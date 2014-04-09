@@ -1,4 +1,5 @@
 %h3 Thread owned by #{@owner.username}
+%h4= link_to 'Go to the administration panel.', admin_panel_situation_path(@situation)
 
 = simple_form_for [@situation, Item.new] do |f|
   = f.input :name, label: "New Item's name"
